@@ -19,6 +19,12 @@ function makeGrid(evt){
         let color = document.querySelector("#colorPicker").value;
         event.target.style.backgroundColor = color;
       });
+      
+    //remove grid color on doubleclick
+    grid.addEventListener("dblclick", function(event){
+      let color = document.querySelector("#colorPicker").value;
+      event.target.style.backgroundColor = '';
+    });
 
   //when size is submitted by user call makeGrid function
        //draw grid
@@ -30,6 +36,8 @@ function makeGrid(evt){
                 newHeight.appendChild(newWidth);
               }
          }
-
 }
+
+
 document.getElementById("sizePicker").addEventListener("submit", makeGrid);
+
